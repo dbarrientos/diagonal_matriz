@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js" ></script>
+</head>
+<body>
+	<input type="number" placeholder="Numero de diagonal" max="5" id="diagonal">
+	<button id="boton">aprietame!!</button>
+
+	<div id="arreglo"></div>
+
+
+	<script>
+
+		$("#boton").click(function() {
+			var diagonal = $("#diagonal").val();
+			var matriz = [ [1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5] ];
+			var arreglo = [];
+			for(var i=0; i < 5; i++) {
+				for(var j=0; j < diagonal ; j++) {
+					if(i == j) {
+						arreglo.push(matriz[i][j]);
+					}
+				}
+			}
+
+			$("#arreglo").append("<p>Arreglo ordenado:"+arreglo+"</p>");
+			$("#arreglo").append("<p>Arreglo orden inverso: "+arreglo.reverse()+"</p>");
+		});
+
+	</script>
+</body>
+</html>
